@@ -27,3 +27,6 @@ node_modules/
 
 # ignore vscode workspace dir
 .vscode
+
+# wordpress installation (don't ask)
+wordpress-6.0.2
