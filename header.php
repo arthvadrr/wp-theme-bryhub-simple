@@ -28,5 +28,7 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'bryhub-simple'); ?></a>
 
 		<header id="masthead" class="site-header">
-			<h1><?php echo get_bloginfo('name'); ?></h1>
+			<div class="header-content">
+				<h1><?php echo get_bloginfo('name'); ?></h1>
+			</div>
 		</header><!-- #masthead -->

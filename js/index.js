@@ -1,3 +1,4 @@
-const notarealfunc = () => {
-  console.log('hi');
+const foobar = () => {
+  console.log('foobar');
 };
+foobar();
