@@ -92,6 +92,22 @@ body {
   }
 }
 
+.site-main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a {
+      &:after {
+        bottom: -15px;
+        height: 5px;
+      }
+    }
+  }
+}
+
 h1 {
   font-size: 3rem;
   line-height: 3.5rem;
@@ -329,6 +345,57 @@ table caption,
     &:active {
       color: $link_text_active;
       border: 2px solid $link_text_active;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  a:after {
+    display: none;
+  }
+
+  .nav-previous,
+  .nav-next {
+    position: relative;
+    padding: 0 calc(1rem + 36px);
+    width: 100%;
+    margin: 2rem;
+    height: 100%;
+
+    a {
+      color: $text;
+    }
+
+    &:after {
+      content: '❯';
+      position: absolute;
+      display: block;
+      bottom: 50%;
+      padding: 0.5rem;
+      transform: translateY(50%);
+    }
+  }
+  .nav-previous {
+    margin-left: 0;
+
+    &:after {
+      content: '❰';
+      left: 0;
+    }
+  }
+  .nav-next {
+    margin-right: 0;
+    text-align: right;
+
+    &:after {
+      right: 0;
     }
   }
 }

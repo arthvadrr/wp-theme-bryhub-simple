@@ -57,26 +57,8 @@ if (!function_exists('bryhub_simple_entry_footer')) :
 
 			$tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'bryhub-simple'));
 			if ($tags_list) {
-				printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'bryhub-simple') . '</span>', $tags_list);
+				printf('<div class="tags-links">' . esc_html__('Tagged %1$s', 'bryhub-simple') . '</div>', $tags_list);
 			}
-		}
-
-		if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						__('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'bryhub-simple'),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post(get_the_title())
-				)
-			);
-			echo '</span>';
 		}
 
 		edit_post_link(
@@ -108,9 +90,9 @@ if (!function_exists('bryhub_simple_post_thumbnail')) :
 		if (is_singular()) :
 ?>
 
-			<div class="post-thumbnail">
+			<span class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
-			</div>
+			</span>
 
 		<?php else : ?>
 
