@@ -31,7 +31,6 @@ body {
   padding: 1rem;
 }
 
-.header-content,
 .site-main {
   max-width: 1000px;
   margin: 0 auto;
@@ -40,7 +39,6 @@ body {
 .site-main a {
   position: relative;
   display: inline-block;
-  text-decoration: none;
   color: $link_text;
   font-weight: 700;
   line-height: 2rem;
@@ -52,42 +50,18 @@ body {
   &:hover,
   &:focus {
     color: $link_text_hover;
-
-    &:after {
-      box-shadow: 0 0 12px $link_text_hover;
-    }
   }
 
   &:active {
     color: $link_text_active;
   }
 
-  &:after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: $link_text;
-  }
-
   &:visited {
     color: $link_visited;
-
-    &:after {
-      background-color: $link_visited;
-      box-shadow: 0 0 0 $link_visited;
-    }
 
     &:hover,
     &:focus {
       color: lighten($link_visited, 10%);
-
-      &:after {
-        background-color: lighten($link_visited, 10%);
-      }
     }
   }
 }
@@ -161,14 +135,6 @@ blockquote {
   }
 }
 
-.wp-block-pullquote blockquote {
-  border-right: 1px solid $list_marker;
-
-  p {
-    padding-right: 1rem;
-  }
-}
-
 cite {
   font-size: 1.2rem;
 }
@@ -191,14 +157,6 @@ table {
 
   caption {
     text-align: left;
-  }
-}
-
-.wp-block-table.is-style-stripes table {
-  tbody {
-    tr:nth-child(odd) td {
-      background-color: #363442;
-    }
   }
 }
 
@@ -254,21 +212,6 @@ li {
   }
 }
 
-.wp-block-image {
-  figure {
-    margin: 0.2rem;
-    max-width: 100%;
-
-    &.alignright {
-      margin: 1.6rem 0 0.4rem 1rem;
-    }
-
-    &.alignleft {
-      margin: 1.6rem 1rem 0.4rem 0;
-    }
-  }
-}
-
 figcaption,
 table caption,
 .wp-block-image figcaption {
@@ -304,49 +247,6 @@ table caption,
 .post-thumbnail img {
   width: 100%;
   height: auto;
-}
-
-.wp-block-button {
-  a {
-    padding: 0.2rem 1rem;
-    border-radius: 0.2rem;
-    background-color: $button;
-    font-size: 1.4rem;
-    line-height: 2.3rem;
-    color: $text;
-    transition: all 40ms linear;
-    border: 2px solid lighten($button, 10%);
-
-    &:hover,
-    &:focus {
-      background-color: $button_hover;
-      color: $button_text_hover;
-      border: 2px solid lighten($button, 15%);
-    }
-
-    &:active {
-      background-color: lighten($button_hover, 2%);
-      color: #fff;
-      border: 2px solid lighten($button, 20%);
-    }
-  }
-
-  &.is-style-outline > .wp-block-button__link:not(.has-background),
-  .wp-block-button__link.is-style-outline:not(.has-background) {
-    color: $link_text;
-    border: 2px solid $link_text;
-
-    &:hover,
-    &:focus {
-      color: $link_text_hover;
-      border: 2px solid $link_text_hover;
-    }
-
-    &:active {
-      color: $link_text_active;
-      border: 2px solid $link_text_active;
-    }
-  }
 }
 
 .nav-links {
